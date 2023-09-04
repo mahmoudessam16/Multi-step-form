@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Multi-step form</title>
+</head>
+<body>
+  <div class="multi-step">
+    <div class="sidebar">
+      <div class="step one">
+        <div class="number">1</div>
+        <div class="info">
+          <span>step 1</span>
+          <h4>your info</h>
+        </div>
+      </div>
+      <div class="step two">
+        <div class="number">2</div>
+        <div class="info">
+          <span>step 2</span>
+          <h4>select plan</h4>
+        </div>
+      </div>
+      <div class="step three">
+        <div class="number">3</div>
+        <div class="info">
+          <span>step 3</span>
+          <h4>add-ons</h>
+        </div>
+      </div>
+      <div class="step four">
+        <div class="number">4</div>
+        <div class="info">
+          <span>step 4</span>
+          <h4>summary</h>
+        </div>
+      </div>
+    </div>
+
+    <div id="personal-info">
+      <h1>Personal info</h1>
+      <p>Please provide your name, email address, and phone number.</p>
+      <form action="">
+        <div>
+          <label for="name">Name</label><br>
+          <input autofocus type="text" id="name" name="name" placeholder="e.g. Stephen King" required>
+        </div>
+        <div>
+          <label for="email">Email Address</label><br>
+          <input type="email" id="email" name="email" placeholder="e.g. stephenking@lorem.com" required>
+        </div>
+        <div>
+          <label for="number">Phone Number</label><br>
+          <input type="text" id="number" placeholder="e.g. +1 234 567 890" name="number" required>
+        </div>
+        <button type="submit">Next Step</button>
+      </form>
+    </div>
+
+    <div id="plan">
+      <h1>Select your plan</h1>
+      <p>You have the option of monthly or yearly billing.</p>
+
+      <div class="plans">
+        <div class="plan">
+          <img src="./assets/images/icon-arcade.svg" alt="arcade">
+          <div class="information">
+            <h3>Arcade</h3>
+            <span class="plan-one">$9/mo</span>
+            <div class="free-months">2 months free</div>
+          </div>
+        </div>
+
+        <div class="plan">
+          <img src="./assets/images/icon-advanced.svg" alt="advanced">
+          <div class="information">
+            <h3>Advanced</h3>
+            <span class="plan-two">$12/mo</span>
+            <div class="free-months">2 months free</div>
+          </div>
+        </div>
+
+        <div class="plan">
+          <img src="./assets/images/icon-pro.svg" alt="pro">
+          <div class="information">
+            <h3>Pro</h3>
+            <span class="plan-three">$15/mo</span>
+            <div class="free-months">2 months free</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="toggle">
+        <h4 class="monthly">Monthly</h4>
+        <label>
+          <input type="checkbox" class="toggle-checkbox">
+          <div class="toggle-switch"></div>
+        </label>
+        <h4 class="yearly">Yearly</h4>
+      </div>
+
+      <div class="btns">
+        <button class="back-btn">Go Back</button>
+        <button class="next-btn">Next Step</button>
+      </div>
+
+    </div>
+
+    <div id="add-ons">
+      <h1>Pick add-ons</h1>
+      <p>Add-ons help enhance your gaming experience.</p>
+
+      <div class="adds">
+        <div class="add">
+          <input type="checkbox" name="add" id="add">
+          <div class="add-name">
+            <h3>Online service</h3>
+            <p>Access to multiplayer games</p>
+          </div>
+          <span class="money one">+$1/mo</span>
+        </div>
+
+        <div class="add">
+          <input type="checkbox" name="add" id="add">
+          <div class="add-name">
+            <h3>Larger storage</h3>
+            <p>Extra 1TB of cloud save</p>
+          </div>
+          <span class="money two">+$2/mo</span>
+        </div>
+
+        <div class="add">
+          <input type="checkbox" name="add" id="add">
+          <div class="add-name">
+            <h3>Customizable Profile</h3>
+            <p>Custom theme on your profile</p>
+          </div>
+          <span class="money three">+$2/mo</span>
+        </div>
+      </div>
+
+      <div class="btns">
+        <button class="back-btn">Go Back</button>
+        <button class="next-btn">Next Step</button>
+      </div>
+
+    </div>
+
+    <div id="summary">
+      <h1>Finishing up</h1>
+      <p>Double-check everything looks OK before confirming.</p>
+      <div class="summary">
+        <div class="summary-plan">
+          <div>
+            <h3 class="plan-name"></h3>
+            <a href="#">change</a>
+          </div>
+          <p class="plan-price"></p>
+        </div>
+        <div class="hr"></div>
+
+        <div class="advertisments">
+          <div class="add-names"></div>
+          <div class="add-prices"></div>
+        </div>
+      </div>   
+      
+      <div class="total">
+        <p></p>
+        <span class="total"></span>
+      </div>
+
+      <div class="btns">
+        <button class="back-btn">Go Back</button>
+        <button class="next-btn">Confirm</button>
+      </div>
+    </div>
+
+    <div id="confirmation">
+      <div class="content">
+        <img src="./assets/images/icon-thank-you.svg" alt="Thank you">
+        <h1>Thank you!</h1>
+        <p>
+          Thanks for confirming your subscription! We hope you have fun 
+          using our platform. If you ever need support, please feel free 
+          to email us at support@loremgaming.com.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  <script src="main.js"></script>
+</body>
+</html>

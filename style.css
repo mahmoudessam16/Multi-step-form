@@ -1,0 +1,649 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  background-color: hsl(217, 100%, 97%);
+}
+body .multi-step {
+  width: 900px;
+  height: 500px;
+  margin: 70px auto;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 15px;
+  padding: 15px;
+  display: flex;
+}
+body .multi-step .sidebar {
+  background-image: url("./assets/images/bg-sidebar-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 300px;
+  border-radius: 15px;
+  padding: 20px;
+}
+body .multi-step .sidebar .step {
+  display: flex;
+  align-items: center;
+  margin: 15px 15px 20px 5px;
+}
+body .multi-step .sidebar .step .number {
+  margin-right: 15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid hsl(206, 94%, 87%);
+  color: hsl(217, 100%, 97%);
+  font-weight: 700;
+}
+body .multi-step .sidebar .step .info {
+  text-transform: uppercase;
+}
+body .multi-step .sidebar .step .info span {
+  color: hsl(229, 24%, 87%);
+  font-size: 14px;
+}
+body .multi-step .sidebar .step .info h4 {
+  color: hsl(0, 0%, 100%);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+}
+body .multi-step #personal-info,
+body .multi-step #plan,
+body .multi-step #add-ons,
+body .multi-step #summary {
+  position: relative;
+  margin: 15px 60px 15px 15px;
+}
+body .multi-step #personal-info h1,
+body .multi-step #plan h1,
+body .multi-step #add-ons h1,
+body .multi-step #summary h1 {
+  color: hsl(213, 96%, 18%);
+  margin: 10px 0 8px 0;
+  letter-spacing: -0.5px;
+}
+body .multi-step #personal-info p,
+body .multi-step #plan p,
+body .multi-step #add-ons p,
+body .multi-step #summary p {
+  color: hsl(231, 11%, 63%);
+  font-weight: 500;
+}
+body .multi-step #personal-info form,
+body .multi-step #plan form,
+body .multi-step #add-ons form,
+body .multi-step #summary form {
+  width: 100%;
+  margin: 20px 0 0 0;
+}
+body .multi-step #personal-info form div,
+body .multi-step #plan form div,
+body .multi-step #add-ons form div,
+body .multi-step #summary form div {
+  margin-bottom: 15px;
+}
+body .multi-step #personal-info form div label,
+body .multi-step #plan form div label,
+body .multi-step #add-ons form div label,
+body .multi-step #summary form div label {
+  font-size: 14px;
+  font-weight: 500;
+  color: hsl(213, 96%, 18%);
+}
+body .multi-step #personal-info form div input,
+body .multi-step #plan form div input,
+body .multi-step #add-ons form div input,
+body .multi-step #summary form div input {
+  width: 100%;
+  padding: 15px;
+  margin-top: 7px;
+  border-radius: 6px;
+  border: 1px solid hsl(229, 24%, 87%);
+  outline: none;
+  color: hsl(213, 96%, 18%);
+  font-weight: 700;
+  font-size: 15px;
+}
+body .multi-step #personal-info form div input::-moz-placeholder, body .multi-step #plan form div input::-moz-placeholder, body .multi-step #add-ons form div input::-moz-placeholder, body .multi-step #summary form div input::-moz-placeholder {
+  color: hsl(231, 11%, 63%);
+}
+body .multi-step #personal-info form div input::placeholder,
+body .multi-step #plan form div input::placeholder,
+body .multi-step #add-ons form div input::placeholder,
+body .multi-step #summary form div input::placeholder {
+  color: hsl(231, 11%, 63%);
+}
+body .multi-step #personal-info form div input:focus,
+body .multi-step #plan form div input:focus,
+body .multi-step #add-ons form div input:focus,
+body .multi-step #summary form div input:focus {
+  border-color: hsl(243, 100%, 62%);
+}
+body .multi-step #personal-info form button,
+body .multi-step #plan form button,
+body .multi-step #add-ons form button,
+body .multi-step #summary form button {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  padding: 15px 22px;
+  border: none;
+  border-radius: 10px;
+  background-color: hsl(213, 96%, 18%);
+  color: hsl(0, 0%, 100%);
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.1s;
+  cursor: pointer;
+}
+body .multi-step #personal-info form button:hover,
+body .multi-step #plan form button:hover,
+body .multi-step #add-ons form button:hover,
+body .multi-step #summary form button:hover {
+  background-color: hsl(243, 100%, 62%);
+}
+body .multi-step #plan {
+  margin: 15px 40px 15px 15px;
+  display: none;
+}
+body .multi-step #plan .plans {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0;
+}
+body .multi-step #plan .plans .plan {
+  border: 1px solid hsl(229, 24%, 87%);
+  width: 140px;
+  padding: 20px 20px 10px 20px;
+  margin-right: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+body .multi-step #plan .plans .plan:hover {
+  border-color: hsl(243, 100%, 62%);
+}
+body .multi-step #plan .plans .plan img {
+  margin-bottom: 40px;
+}
+body .multi-step #plan .plans .plan .information h3 {
+  color: hsl(213, 96%, 18%);
+  letter-spacing: 0px;
+  font-size: 18px;
+}
+body .multi-step #plan .plans .plan .information span {
+  color: hsl(231, 11%, 63%);
+  font-size: 14px;
+  font-weight: 500;
+}
+body .multi-step #plan .plans .plan .free-months {
+  font-size: 13px;
+  color: hsl(213, 96%, 18%);
+  font-weight: 700;
+  margin-top: 3px;
+  letter-spacing: -0.5px;
+  transition: display 0.3s;
+  display: none;
+}
+body .multi-step #plan .toggle {
+  width: calc(100% - 20px);
+  background-color: hsl(217, 100%, 97%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  border-radius: 10px;
+}
+body .multi-step #plan .toggle h4 {
+  transition: 0.3s;
+}
+body .multi-step #plan .toggle label {
+  margin: 0 15px;
+}
+body .multi-step #plan .toggle label .toggle-checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  display: none;
+}
+body .multi-step #plan .toggle label .toggle-switch {
+  background-color: hsl(213, 96%, 18%);
+  width: 50px;
+  height: 25px;
+  border-radius: 16px;
+  position: relative;
+  transition: 0.3s;
+  cursor: pointer;
+}
+body .multi-step #plan .toggle label .toggle-switch::before {
+  content: "";
+  position: absolute;
+  background-color: white;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  top: 3.5px;
+  left: 3px;
+  transition: 0.3s;
+}
+body .multi-step #plan .toggle label .toggle-checkbox:checked + .toggle-switch::before {
+  left: 28px;
+}
+body .multi-step #plan .btns {
+  width: calc(100% - 20px);
+  margin: 70px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .multi-step #plan .btns button {
+  padding: 15px 22px;
+  border: none;
+  border-radius: 10px;
+  color: hsl(0, 0%, 100%);
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.1s;
+  cursor: pointer;
+}
+body .multi-step #plan .btns button.next-btn {
+  background-color: hsl(213, 96%, 18%);
+}
+body .multi-step #plan .btns button.next-btn:hover {
+  background-color: hsl(243, 100%, 62%);
+}
+body .multi-step #plan .btns button.back-btn {
+  color: hsl(231, 11%, 63%);
+  font-weight: 700;
+  background-color: transparent;
+}
+body .multi-step #plan .btns button.back-btn:hover {
+  color: hsl(213, 96%, 18%);
+}
+body .multi-step #add-ons {
+  display: none;
+}
+body .multi-step #add-ons .adds {
+  margin: 20px 0 20px 0;
+  width: 100%;
+}
+body .multi-step #add-ons .adds .add {
+  border: 1px solid hsl(229, 24%, 87%);
+  width: 470px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  padding: 15px 20px;
+  border-radius: 10px;
+}
+body .multi-step #add-ons .adds .add input {
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+}
+body .multi-step #add-ons .adds .add .add-name {
+  flex: 1;
+  margin-left: 20px;
+}
+body .multi-step #add-ons .adds .add .add-name h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: hsl(213, 96%, 18%);
+  letter-spacing: -0.5px;
+}
+body .multi-step #add-ons .adds .add .add-name p {
+  font-size: 14px;
+  margin-top: 3px;
+  color: grey;
+}
+body .multi-step #add-ons .adds .add span.money {
+  color: hsl(243, 100%, 62%);
+  font-size: 14px;
+  font-weight: 500;
+}
+body .multi-step #add-ons .btns {
+  width: 100%;
+  margin: 50px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .multi-step #add-ons .btns button {
+  padding: 15px 22px;
+  border: none;
+  border-radius: 10px;
+  color: hsl(0, 0%, 100%);
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.1s;
+  cursor: pointer;
+}
+body .multi-step #add-ons .btns button.next-btn {
+  background-color: hsl(213, 96%, 18%);
+}
+body .multi-step #add-ons .btns button.next-btn:hover {
+  background-color: hsl(243, 100%, 62%);
+}
+body .multi-step #add-ons .btns button.back-btn {
+  color: hsl(231, 11%, 63%);
+  font-weight: 700;
+  background-color: transparent;
+}
+body .multi-step #add-ons .btns button.back-btn:hover {
+  color: hsl(213, 96%, 18%);
+}
+body .multi-step #summary {
+  display: none;
+  margin: 15px;
+  width: 55%;
+}
+body .multi-step #summary .summary {
+  background-color: hsl(217, 100%, 97%);
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 10px;
+}
+body .multi-step #summary .summary .summary-plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .multi-step #summary .summary .summary-plan .plan-name {
+  font-size: 18px;
+  letter-spacing: -0.5px;
+  color: hsl(213, 96%, 18%);
+}
+body .multi-step #summary .summary .summary-plan .plan-name a {
+  display: block;
+  margin-top: 2px;
+  font-size: 15px;
+  text-transform: capitalize;
+  color: hsl(231, 11%, 63%);
+  font-weight: normal;
+}
+body .multi-step #summary .summary .summary-plan .plan-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: hsl(213, 96%, 18%);
+  letter-spacing: -1px;
+}
+body .multi-step #summary .summary .hr {
+  width: 100%;
+  height: 1px;
+  background-color: #d5d5d5;
+  margin: 15px 0;
+}
+body .multi-step #summary .summary .advertisments {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .multi-step #summary .summary .advertisments .add-names p {
+  margin: 15px 0;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+}
+body .multi-step #summary .summary .advertisments .add-prices {
+  display: flex;
+  flex-direction: column;
+}
+body .multi-step #summary .summary .advertisments .add-prices span {
+  display: block;
+  margin: 7px 0;
+  font-size: 14px;
+  color: hsl(213, 96%, 18%);
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+body .multi-step #summary .total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+body .multi-step #summary .total p {
+  font-size: 18px;
+  letter-spacing: -0.5px;
+  color: hsl(229, 24%, 87%);
+}
+body .multi-step #summary .total span.total {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+  color: hsl(243, 100%, 62%);
+}
+body .multi-step #summary .btns {
+  width: 100%;
+  margin: 50px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .multi-step #summary .btns button {
+  padding: 15px 22px;
+  border: none;
+  border-radius: 10px;
+  color: hsl(0, 0%, 100%);
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.1s;
+  cursor: pointer;
+}
+body .multi-step #summary .btns button.next-btn {
+  background-color: hsl(243, 100%, 62%);
+  transition: 0.3s;
+}
+body .multi-step #summary .btns button.next-btn:hover {
+  background-color: hsl(213, 96%, 18%);
+}
+body .multi-step #summary .btns button.back-btn {
+  color: hsl(231, 11%, 63%);
+  font-weight: 700;
+  background-color: transparent;
+}
+body .multi-step #summary .btns button.back-btn:hover {
+  color: hsl(213, 96%, 18%);
+}
+body .multi-step #confirmation {
+  display: none;
+  width: 55%;
+  text-align: center;
+}
+body .multi-step #confirmation .content {
+  display: flex;
+  margin-top: 100px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body .multi-step #confirmation .content h1 {
+  color: hsl(213, 96%, 18%);
+  margin: 30px 0 15px 0;
+}
+body .multi-step #confirmation .content p {
+  line-height: 1.6;
+  letter-spacing: -0.5px;
+  color: hsl(231, 11%, 63%);
+}
+
+@media (max-width: 400px) {
+  .multi-step {
+    width: 100% !important;
+    flex-direction: column;
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: transparent !important;
+  }
+  .multi-step .sidebar {
+    background-image: url(./assets/images/bg-sidebar-mobile.svg) !important;
+    border-radius: 0 !important;
+    display: flex;
+    justify-content: center;
+    background-size: cover !important;
+    width: 100% !important;
+  }
+  .multi-step .sidebar .step .number {
+    margin: 0 !important;
+    transform: translateX(5px);
+  }
+  .multi-step .sidebar .step .info {
+    display: none;
+  }
+  .multi-step #personal-info {
+    position: static !important;
+    background-color: hsl(0, 0%, 100%);
+    margin: -20px 10px 20px 10px !important;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  .multi-step #personal-info h1 {
+    font-size: 22px !important;
+  }
+  .multi-step #personal-info p {
+    font-size: 14px !important;
+  }
+  .multi-step #personal-info button {
+    font-size: 13px !important;
+    border-radius: 5px !important;
+    margin: 10px !important;
+    bottom: 20px !important;
+    right: 20px !important;
+  }
+  .multi-step #plan {
+    background-color: hsl(0, 0%, 100%);
+    margin: -20px 10px 20px 10px !important;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  .multi-step #plan h1 {
+    font-size: 22px !important;
+  }
+  .multi-step #plan p {
+    font-size: 14px !important;
+  }
+  .multi-step #plan .plans {
+    flex-direction: column;
+    margin: 10px 0 !important;
+  }
+  .multi-step #plan .plans .plan {
+    width: 100% !important;
+    margin: 5px !important;
+    display: flex;
+    align-items: center;
+    padding: 10px !important;
+  }
+  .multi-step #plan .plans .plan img {
+    margin-bottom: 0 !important;
+    margin-right: 15px !important;
+  }
+  .multi-step #plan .plans .plan .information h3 {
+    font-size: 16px !important;
+  }
+  .multi-step #plan .plans .plan .information span {
+    font-size: 12px !important;
+  }
+  .multi-step #plan .toggle {
+    width: 100% !important;
+    font-size: 14px !important;
+  }
+  .multi-step #plan .btns {
+    width: 100% !important;
+    margin: 35px 0 0 0 !important;
+  }
+  .multi-step #plan .btns button {
+    font-size: 13px !important;
+    border-radius: 5px !important;
+  }
+  .multi-step #add-ons {
+    background-color: hsl(0, 0%, 100%);
+    margin: -20px 10px 20px 10px !important;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  .multi-step #add-ons h1 {
+    font-size: 22px !important;
+  }
+  .multi-step #add-ons p {
+    font-size: 14px !important;
+  }
+  .multi-step #add-ons .adds {
+    margin: 10px 0 !important;
+  }
+  .multi-step #add-ons .adds .add {
+    width: 100% !important;
+    margin: 10px 0 !important;
+    padding: 15px !important;
+  }
+  .multi-step #add-ons .adds .add input {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .multi-step #add-ons .adds .add .add-name h3 {
+    font-size: 16px !important;
+  }
+  .multi-step #add-ons .btns {
+    width: 100% !important;
+    margin: 35px 0 0 0 !important;
+  }
+  .multi-step #add-ons .btns button {
+    font-size: 13px !important;
+    border-radius: 5px !important;
+  }
+  .multi-step #summary {
+    background-color: hsl(0, 0%, 100%);
+    margin: -20px 10px 20px 10px !important;
+    padding: 15px;
+    border-radius: 10px;
+    width: calc(100% - 20px) !important;
+  }
+  .multi-step #summary h1 {
+    font-size: 22px !important;
+  }
+  .multi-step #summary p {
+    font-size: 14px !important;
+  }
+  .multi-step #summary .summary {
+    margin: 10px 0 !important;
+    padding: 15px !important;
+  }
+  .multi-step #summary .summary .summary-plan h3 {
+    font-size: 16px !important;
+    letter-spacing: -1px !important;
+  }
+  .multi-step #summary .summary .advertisments .add-names p {
+    margin: 6px 0 !important;
+  }
+  .multi-step #summary .summary .advertisments .add-prices span {
+    margin: 3px 0 !important;
+  }
+  .multi-step #confirmation {
+    width: calc(100% - 20px) !important;
+    background-color: hsl(0, 0%, 100%);
+    margin: -20px 10px 20px 10px !important;
+    padding: 15px;
+    border-radius: 10px;
+    height: 600px;
+  }
+  .multi-step #confirmation .content {
+    margin-top: 50px !important;
+  }
+  .multi-step #confirmation .content img {
+    width: 70px;
+  }
+  .multi-step #confirmation .content h1 {
+    margin: 15px !important;
+  }
+  .multi-step #confirmation .content p {
+    line-height: 1.2;
+    font-size: 17px;
+  }
+}/*# sourceMappingURL=style.css.map */
